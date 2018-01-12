@@ -3,10 +3,16 @@ import java.util.Random;
 import java.util.function.Function;
 
 public class Point {
+	//random for random coordinate generation
 	static Random rand = new Random();
-	static Function<Double, Double> funct = x -> x;
-	static Function<Double, Double> inv = x -> x;
+	//function used to define the line separating points
+	static Function<Double, Double> funct = x -> 2*(x+50);
+	//function used to draw line
+	static Function<Double, Double> inv = x -> x/2 - 50;
+	
+	///TODO: function can only be linear, improve drawing/classification method
 
+	//size of eclipse to be drawn
 	static int diameter = 10;
 
 	double x;
@@ -14,10 +20,13 @@ public class Point {
 	int label;
 
 	public Point() {
+		// generate random coordinates
 		x = rand.nextDouble() * Main.X;
 		y = rand.nextDouble() * Main.Y;
+		
 		double x1 = funct.apply(x);
-		// System.out.println((int) x + " " + y + " " + (int) x1);
+		
+		//generate label
 		if (x1 > y) {
 			label = 1;
 		} else {
@@ -26,12 +35,12 @@ public class Point {
 	}
 
 	public void draw(Color c) {
+		//draw the point at (x, y) with color c
 		Main.g2d.setColor(c);
 		if (label == 1)
 			Main.g2d.drawOval((int) x, (int) y, diameter, diameter);
 		else if (label == -1)
 			Main.g2d.fillOval((int) x, (int) y, diameter, diameter);
-
 
 	}
 }
