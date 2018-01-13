@@ -19,7 +19,17 @@ public class Main {
 
 		// create percepetron
 		Percepetron p = new Percepetron();
+		
+		int epochs = 100;
+		for (int j = 0; j < epochs; j++) {
+			for (int i = 0; i < 10000; i++) {
+				// create random point
+				Point point = new Point();
 
+				// train the percepetron with the point
+				p.train(point);
+			}
+		}
 		int correct = 0;
 		int numTests = 1000;
 		for (int i = 0; i < numTests; i++) {

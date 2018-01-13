@@ -1,7 +1,7 @@
 
 public class Percepetron {
 	// learning rate affects how big each learning step is
-	static double learningRate = 1;
+	static double learningRate = 10;
 
 	/*
 	 * Structure:

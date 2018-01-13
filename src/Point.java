@@ -8,8 +8,6 @@ public class Point {
 	//function used to define the line separating points
 	static Function<Double, Double> funct = x -> 2*x;
 	
-	///TODO: function can only be linear, improve drawing/classification method
-
 	//size of eclipse to be drawn
 	static int diameter = 10;
 
