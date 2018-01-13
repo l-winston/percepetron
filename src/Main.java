@@ -40,6 +40,7 @@ public class Main {
 
 		// show the weights after training
 		System.out.println(Arrays.toString(p.weights));
+		System.out.println(Arrays.toString(p.biases));
 	}
 
 	// frame setup
@@ -58,6 +59,12 @@ public class Main {
 		frame.pack();
 
 		g2d.setColor(Color.black);
-		g2d.drawLine(0, (int) Point.funct.apply(0.0).doubleValue(), (int) Point.inv.apply(X * 1.0).doubleValue(), Y);
+		for (int i = 0; i < image.getWidth(); i++) {
+			for (int j = 0; j < image.getHeight(); j++) {
+				if ((int) Math.round(Point.funct.apply(i * 1.0)) == j) {
+					image.setRGB(i, j, Color.black.getRGB());
+				}
+			}
+		}
 	}
 }

@@ -6,9 +6,7 @@ public class Point {
 	//random for random coordinate generation
 	static Random rand = new Random();
 	//function used to define the line separating points
-	static Function<Double, Double> funct = x -> 2*(x+50);
-	//function used to draw line
-	static Function<Double, Double> inv = x -> x/2 - 50;
+	static Function<Double, Double> funct = x -> 2*x;
 	
 	///TODO: function can only be linear, improve drawing/classification method
 
